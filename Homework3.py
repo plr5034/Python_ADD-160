@@ -43,7 +43,7 @@ def conference_signup(*contacts, **contact_details):
             dividing_line(mylength)
     else:
         print("No contact details provided.")
-
+dividing_line(mylength)
 
 '''
 Test Cases to validate script
