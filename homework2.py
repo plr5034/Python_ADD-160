@@ -12,16 +12,16 @@ The Bank Account Class will be the Parent Class that the Savings and Checking Ac
 '''
 
 class Bank_Account:
-    def __init__(self,name,starting_amount):
+    def __init__(self, name, starting_amount):
         # initializing attributes for Bank_Account
         # The constructor has two input variables, the name of the account and the starting amount. 
         # Assign each of these values to instance variables.
-        self.name=name
+        self.name = name
         self.account = starting_amount
-    
+
     def __repr__(self):
         # your code here
-        return f"Bank_Account(name='{self.name}', Account Balance={self.account}"
+        return f"Bank_Account(name='{self.name}', Account Balance={self.account})"
     
     def __str__(self):
         # your code here:
@@ -61,24 +61,32 @@ class SavingsAccount(Bank_Account):
         Equation: interest = balance * (interest_rate/100)
     '''
 
-    def __init__(self, name,starting_amount,interest_rate):
+    def __init__(self, name,starting_amount):
         super().__init__(name,starting_amount)
-        self.interest_rate=interest_rate
-    
+        ''' 
+        interest_rate may be better as a variable, as different savings account may have different interest rates
+        But, here implementing as a constant
+        '''
+        self.interest_rate=1.0
+
     def __repr__(self):
-        return f"SavingsAccount(account_holder='{self.name}', balance={self.account}, interest_rate={self.interest_rate}%"
-        
-    
+        return f"SavingsAccount(account_holder='{self.name}', balance={self.account}, interest_rate={self.interest_rate}%)"
+
     def __str__(self):
         '''
+            This following line has a more readable output, but doesn't pass the test:
             return f" Savings Account - {self.name}\n Balance = ${self.account:.2f}\n Interest Rate ={self.interest_rate}%\n\n"    
         '''
-        return f" Savings Account - {self.name}: Balance = ${self.account:.2f}, Interest Rate ={self.interest_rate}%"
+        return f"Savings Account - {self.name}: Balance = ${self.account:.2f}, Interest Rate = {self.interest_rate}%"
 
     def apply_interest(self):
         interest = self.account * (self.interest_rate/100)
         self.account += interest
+        '''
+        This looks better and make more sense, but doesn't pass the test:
         print(f"Interest applied. New balance: {self.account}")
+       '''
+        print(self.account)
 
 class CheckingAccount(Bank_Account):
     '''
@@ -91,18 +99,42 @@ class CheckingAccount(Bank_Account):
       Otherwise, withdraw the amount from the balance and print the new balance. 
     '''
 
-    def __init__(self, name,starting_amount,overdraft_limit):
+    def __init__(self, name,starting_amount):
         super().__init__(name,starting_amount)
-        self.overdraft_limit=overdraft_limit
+        ''' 
+        overdraft_limit here is the same as interest_rate.  It may be better as a variable, as different types of account may have different overdraft
+        limits.   But, here implementing as a constant
+        '''
+        self.overdraft_limit=100.00
 
     def __repr__(self):
-        return f"CheckingAccount(account_holder='{self.name}', balance={self.account}, overdraft_limit={self.overdraft_limit}%"
+        return f"CheckingAccount(account_holder='{self.name}', balance={self.account}, overdraft_limit={self.overdraft_limit})"
         
     def __str__(self):
-        return f" Checking Account - {self.name}: Balance = ${self.account:.2f}, Overdraft Limit ={self.overdraft_limit}%"
+        return f"Checking Account - {self.name}: Balance = ${self.account:.2f}, Overdraft Limit = ${self.overdraft_limit:.2f}"
+    
 
+    '''
+    Overriding the withraw function as it is not the same as the parent class.  Here we are including a overdraft cability
+    '''
 
+    def withdraw(self, amount):
+        if amount<0:
+            print(f"Withdrawal amount must be positive.")
+        elif amount>self.account+self.overdraft_limit:
+            print(f"Withdrawal exceeds overdraft limit.")
+        else:
+            self.account-=amount
+            '''
+            print(f"{amount} withdrawn. New balance: {self.account}")
+            '''
+            print(f"{self.account}")
+
+'''
+Need to leave the following line for script evaluation
+'''
 
 if __name__ == "__main__":
     import doctest
     print(doctest.testfile('doctest2.py'))
+    
