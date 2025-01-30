@@ -5,6 +5,9 @@ github link: https://github.com/plr5034/Python_ADD-160/blob/main/homework1.py
 Note: Remember to use comments for each function.
 doc strings should include what each input consists of, 
 what the expected output is and a description of the function.
+
+Updates to file based on feedback from Prof: remove pass from real def's (vs empty ones) and don't need to have self.account first be an int.
+Though, at some point, probably need to format to looks like a dollar amount format.
 '''
 
 class Bank_Account:
@@ -16,7 +19,6 @@ class Bank_Account:
 
         self.accountName = name
         self.account = int(starting_amount)
-        pass
     
     def __repr__(self):
         # printable representation of the object.   Formatting is not its virtue.  This is more for troubleshooting
@@ -40,7 +42,6 @@ class Bank_Account:
             print (f"{amount} deposited. New balance: {self.account}")
         else:
             print ("Please deposit a positive number.")
-        pass
 
     def withdraw(self,amount):
         # Withdraw function 
@@ -54,14 +55,12 @@ class Bank_Account:
             print("Insufficient funds.")
         else:
             print("Please withdraw an amount greater than zero.")
-        pass
     
     def check_balance(self):
         # Check_balance function 
         # This function will print out the balance of the account holder.      
 
         print(f"Balance: {self.account}")  
-        pass
 
 # The following code shouldn't be changed as it runs the automated checking
 
