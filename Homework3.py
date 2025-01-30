@@ -45,6 +45,7 @@ def conference_signup(*contacts, **contact_details):
         print("No contact details provided.")
 dividing_line(mylength)
 
+
 '''
 Test Cases to validate script
 '''
