@@ -54,6 +54,10 @@ class Bank_Account:
 
 class SavingsAccount(Bank_Account):
     '''
+    
+    SavingsAccount Class
+    
+    Will inherit from the bank class
     i. make a constructor for the savings account class. The constructor will take the account holder's name, the balance, and the interest rate as parameters. (Don't forget to include self).
     ii. Make the __repr__ function. Sample output: SavingsAccount(account_holder='bob', balance=100, interest_rate=1.0%)
     iii. Make the __str__ function. Sample output: Savings Account - bob: Balance = $100.00, Interest Rate =1.0%
@@ -90,6 +94,10 @@ class SavingsAccount(Bank_Account):
 
 class CheckingAccount(Bank_Account):
     '''
+    
+        CheckingAccount Class
+    
+    Will inherit from the bank class
     i. make a constructor for the savings account class. The constructor will take the account holder's name, the balance, and the overdraft limit as parameters. (Don't forget to include self).
     ii. Make the __repr__ function. Sample output: CheckingAccount(account_holder='bob', balance=100, overdraft_limit=100.0)
     iii. Make the __str__ function. Sample output: Checking Account - bob: Balance = $100.00, Overdraft Limit =$100.00
@@ -132,9 +140,9 @@ class CheckingAccount(Bank_Account):
 
 '''
 Need to leave the following line for script evaluation
+
 '''
 
 if __name__ == "__main__":
     import doctest
     print(doctest.testfile('doctest2.py'))
-    
