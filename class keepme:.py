@@ -1,26 +1,21 @@
-class keepme:
-    def __init__(self, function):
-        self.cache = {}
-        self.function = function
+from functools import wraps
 
-    def __call__(self, *args, **kwargs):        
-        key = str(args) + str(kwargs)
-        if key in self.cache:
-            return self.cache[key]
+class RunMe():
+    def __init__(self, num_times):
+        self.num_times = num_times
+        if self.num_times < 1:
+            print ("Input needs to be a positive number!")
+    def __call__(self, func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for i in range(self.num_times):
+                print(f'Running {i} of {self.num_times}')
+                return func(*args, **kwargs)
+        return wrapper
 
-        value = self.function(*args, **kwargs)
-        self.cache[key] = value
-        return value
+@RunMe(5)
+def sound():
+    print("Quack!")
 
-@keepme
-def fib(n):
-    if n in (0, 1):
-        return 1
-    else:
-        return fib(n-1) + fib(n-2)
-
-for i in range(0, 10):
-    print(fib(i))
-
-print(fib.cache)
-print(fib.cache)
+sound()  # Output: Prefix: sound
+         #         Quack!

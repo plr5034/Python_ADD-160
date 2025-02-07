@@ -53,7 +53,7 @@ def test_function2(n):
     print(total)
     return total
 
-func_timer(test_function1(22))
+func_timer(test_function1(12))
 func_timer(test_function1(27))
 func_timer(test_function2(11))
 
