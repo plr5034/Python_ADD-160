@@ -25,36 +25,3 @@ def func_timer(func):
         print(f"The function '{func.__name__}' took {execution_time:.9f} seconds to execute.")
         return result
     return wrapper
-
-'''
-Test functions to show that the timer decorator works correctly.
-'''
-
-@func_timer
-def test_function1(n):
-    '''Test function that prints out the first n letters of the alphabet
-        add test to validate n is between 1 & 26 :)
-    '''
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    if n > 26 or n <= 0:
-        print('n has to be greater than 0 and less than 27')
-    else:
-        for i in range(n):
-            print(alphabet[i], end=' ')
-        print()
-    return
-
-@func_timer
-def test_function2(n):
-    '''Test function that adds the first n numbers'''
-    total = 0
-    for i in range(n):
-        total += i
-    print(total)
-    return total
-
-func_timer(test_function1(22))
-func_timer(test_function1(27))
-func_timer(test_function2(11))
-
-
