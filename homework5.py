@@ -8,6 +8,7 @@ Note: Remember to use comments for each function.
 doc strings should include what each input consists of, 
 what the expected output is and a description of the function.
 
+
 Objective
 In this assignment, you will create a new abstract class for a different type
 of business, such as a bakery. You will include options for size, flavor, and
@@ -56,7 +57,7 @@ class BakeryItem:
     def __init__(self, size, flavor):
         self.size = size
         self.flavor = flavor
-        self.add_ins = []
+        self.add_ins = [] # List of add-ins
     
     @abstractmethod
     def add_add_ins(self, add_in):
@@ -77,10 +78,14 @@ class Croissant(BakeryItem):
     def add_add_ins(self, add_in):
         '''Add an ingredient to the croissant.'''
         self.add_ins.append(add_in)
+        ''' Since add_ins is a list, we need to join them together if more
+        than one
+        '''
         print (f"Added {', '.join(self.add_ins)} to the croissant.")
             
     def get_description(self):
-        '''Print out what makes this particular croissant.'''
+        '''Print out what makes this particular croissant.  Since add_ins is a
+         list, we need to join them together.'''
         return f"{self.size} {self.flavor} croissant with {', '.join(self.add_ins)}."
 
 class Muffin(BakeryItem):
@@ -89,10 +94,15 @@ class Muffin(BakeryItem):
         super().__init__(size, flavor)  
     
     def add_add_ins(self, add_in):
-        self.add_ins.append(add_in)        
+        self.add_ins.append(add_in)
+        ''' Since add_ins is a list, we need to join them together if more
+        than one
+        '''        
         print (f"Added {', '.join(self.add_ins)} to the muffin.")  
     
     def get_description(self):
+        '''Print out what makes this particular muffin.  Since add_ins is a
+         list, we need to join them together.'''
         return f"{self.size} {self.flavor} muffin with {', '.join(self.add_ins)}."
 
 class Scone(BakeryItem):
@@ -102,15 +112,24 @@ class Scone(BakeryItem):
 
     def add_add_ins(self, add_in):
         self.add_ins.append(add_in)
+        ''' Since add_ins is a list, we need to join them together if more
+        than one
+        '''    
         print (f"Added {', '.join(self.add_ins)} to the scone.")  
 
     def get_description(self):
+        '''Print out what makes this particular scone.  Since add_ins is a
+         list, we need to join them together.'''
         print(f"{self.size} {self.flavor} scone with {', '.join(self.add_ins)}.")
 
+'''
+Used this to test more that one add_in in the list.   Uncomment to run test.
+'''
 
 # scone = Scone("small", "chocolate")
 # scone.add_add_ins("Almonds, Raisins")
 # scone.get_description()
+
 
 '''
 Testing the classes w/ predified test cases.   Do not remove the test cases.
