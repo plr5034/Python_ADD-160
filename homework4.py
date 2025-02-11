@@ -63,10 +63,10 @@ class Car:
         Instance method to display car details.   Again, would need to update
         the info to look like:
 
-        print(f"Car: {self.brand} {self.model} {self.year} {self.color} {self.package}")
+        return f"Car: {self.brand} {self.model} {self.year} {self.color} {self.package}"
         '''
-        print(f"\'Car: {self.brand} {self.model}\'")
-    
+        return f"Car: {self.brand} {self.model}"
+        
     @classmethod
     def update_total_cars(cls, count):
         '''
@@ -79,7 +79,7 @@ class Car:
         '''
         Static method providing general information about cars.
         '''
-        print("\'Cars are a mode of transportation.\'")
+        return "Cars are a mode of transportation."
 
 if __name__ == "__main__":
     import doctest
