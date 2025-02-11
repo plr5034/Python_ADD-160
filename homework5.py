@@ -84,7 +84,7 @@ class Croissant(BakeryItem):
         print (f"Added {', '.join(self.add_ins)} to the croissant.")
             
     def get_description(self):
-        '''Print out what makes this particular croissant.  Since add_ins is a
+        '''Return what makes this particular croissant.  Since add_ins is a
          list, we need to join them together.'''
         return f"{self.size} {self.flavor} croissant with {', '.join(self.add_ins)}."
 
@@ -99,15 +99,14 @@ class Muffin(BakeryItem):
         than one
         '''        
         print (f"Added {', '.join(self.add_ins)} to the muffin.")  
-        return f"Added {', '.join(self.add_ins)} to the muffin."
     
     def get_description(self):
-        '''Print out what makes this particular muffin.  Since add_ins is a
+        '''Return what makes this particular muffin.  Since add_ins is a
          list, we need to join them together.'''
         return f"{self.size} {self.flavor} muffin with {', '.join(self.add_ins)}."
 
 class Scone(BakeryItem):
-    '''Print out what makes this particular scone'''
+    '''Concrete class representing a scone'''
     def __init__(self, size, flavor):
         super().__init__(size, flavor)
 
@@ -119,17 +118,16 @@ class Scone(BakeryItem):
         print (f"Added {', '.join(self.add_ins)} to the scone.")  
 
     def get_description(self):
-        '''Print out what makes this particular scone.  Since add_ins is a
+        ''' Return what makes this particular scone.  Since add_ins is a
          list, we need to join them together.'''
-        print(f"{self.size} {self.flavor} scone with {', '.join(self.add_ins)}.")
-
+        return f"{self.size} {self.flavor} scone with {', '.join(self.add_ins)}."
 '''
 Used this to test more that one add_in in the list.   Uncomment to run test.
 '''
 
 # scone = Scone("small", "chocolate")
 # scone.add_add_ins("Almonds, Raisins")
-# scone.get_description()
+# print (scone.get_description())
 
 
 '''
