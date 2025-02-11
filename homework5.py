@@ -99,6 +99,7 @@ class Muffin(BakeryItem):
         than one
         '''        
         print (f"Added {', '.join(self.add_ins)} to the muffin.")  
+        return f"Added {', '.join(self.add_ins)} to the muffin."
     
     def get_description(self):
         '''Print out what makes this particular muffin.  Since add_ins is a
