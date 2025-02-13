@@ -162,5 +162,5 @@ class SmartBulb(Light):
 if __name__ == "__main__":
     import doctest
 #    print(doctest.testfile('my_doctest.py'))
-    print(doctest.testfile('my_doctest.py'))
+    print(doctest.testfile('testdoc6.py'))
 
