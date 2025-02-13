@@ -1,7 +1,7 @@
 '''
 Homework6
-Name:
-github link:
+Name:Paul Ring 
+github link:https://github.com/plr5034/Python_ADD-160/blob/main/homework6.py
 Note: Remember to use comments for each function.
 doc strings should include what each input consists of, 
 what the expected output is and a description of the function.
