@@ -59,13 +59,19 @@ Test your program using the doctest before handing it in.
 '''
 
 class Device:
+    '''
+    The Device class will be the base class for all devices
+
+    Args:
+        name - for the device
+    
+    Returns:
+        Prints out the device name and status of the device.
+
+    '''
     def __init__(self, name):
         self.name = name
         self.status = "OFF"
-
-#    def change_dev_status(self, status):
-#            self.status = status
-#            print(f"{self.name} is now {self.status}")
 
     def turn_on(self):
         self.status = "ON"
@@ -75,20 +81,31 @@ class Device:
         self.status = "OFF"
         print (f"{self.name} is now {self.status}.")
 
-'''
-The Light class inherits from Device class.
-What is unique about this class is that it has a brightness level.  So, this
-class will have a brightness instance variable.  
-
-The set_brightness function will allow the user to change the brightness
-level.  If the brightness level is between 0 and 100, change the brightness
-to the specified level.  Else, let the user know the input is not invalid.
-
-Sample outputs: if brightness level is between 0 and 100: Device1 brightness
-set to 30. otherwise: Invalid brightness level. Must be between 0 and 100.
-'''
-
 class Light(Device):
+    '''
+    The Light class inherits from Device class.
+    What is unique about this class is that it has a brightness level.  So, this
+    class will have a brightness instance variable.  
+
+    The set_brightness function will allow the user to change the brightness
+    level.  If the brightness level is between 0 and 100, change the brightness
+    to the specified level.  Else, let the user know the input is not invalid.
+
+    Sample outputs: if brightness level is between 0 and 100: Device1 brightness
+    set to 30. otherwise: Invalid brightness level. Must be between 0 and 100.
+    
+    Args:
+        name - for the device
+        brightness - level of brightness for the light
+    
+    Returns:
+        Prints out an error if the brightness level is not between 0 and 100.
+        or Prints out the brightness level set to the specified level.
+    
+    Inheritance:
+        State - device state from the Device class
+    '''
+
     def __init__(self, name, brightness=50):
         super().__init__(name)
         self.brightness = brightness
@@ -103,22 +120,34 @@ class Light(Device):
         else:
             print("Invalid brightness level. Must be between 0 and 100.")
 
-'''
-The LEDLight class inherits from Light class.   So, this will inherit the 
-device state and the light brightness level.
-What is unique about this class is that it have a color.  This class will
-have a color instance variable.  
-
-The set_color function will allow the user to  allow the user to overwrite
-the color instance variable and display a message.  While not part of the
-original requirements, it would be good to have a valid list of colors to
-check against.  If the color is not in the list, let the user know the input
-is not invalid.
-
-Sample output: Device3 color changed to Blue.
-'''
-
 class LEDLight(Light):
+    '''
+    The LEDLight class inherits from Light class.   So, this will inherit the 
+    device state and the light brightness level.
+    What is unique about this class is that it have a color.  This class will
+    have a color instance variable.  
+
+    The set_color function will allow the user to  allow the user to overwrite
+    the color instance variable and display a message.  While not part of the
+    original requirements, it would be good to have a valid list of colors to
+    check against.  If the color is not in the list, let the user know the input
+    is not invalid.
+    
+    Sample output: Device3 color changed to Blue.
+    
+    Args:
+        name - for the device
+        brightness - level of brightness for the light
+        color - color of the light
+    
+    Returns:
+        Prints out an error if the color is not in the valid list of colors.
+        or Prints out the color changed to the specified color.
+    
+    Inheritance:
+        State - device state from the Device class
+    '''
+
     def __init__(self, name, brightness=50, color="White"):
         super().__init__(name, brightness)
         self.color = color
@@ -131,22 +160,33 @@ class LEDLight(Light):
         else:
             print (f"{self.color} is not a valid color.  Please use one of the following {self.valid_colors}.")
 
-'''
-The SmartBulb class also inherits from Light class.   So, again will inherit 
-the device state and the light brightness level.
-What is unique about this class is that it have a mode.  This class will
-have a self.smart_mode instance variable.  
-
-There are two functions that will allow the user to change the mode.  The
-enable_smart_mode function will change the value of the smart_mode instance
-to True and print the message "Device4 smart mode enabled.".  While the
-disable_smart_mode function will change the value of the smart_mode instance
-to False and print the message "Device4 smart mode disabled.".
-
-Sample output: "Device4 smart mode enabled." or "Device4 smart mode disabled."
-'''
-
 class SmartBulb(Light):
+    '''
+    The SmartBulb class also inherits from Light class.   So, again will inherit 
+    the device state and the light brightness level.
+    What is unique about this class is that it have a mode.  This class will
+    have a self.smart_mode instance variable.  
+
+    There are two functions that will allow the user to change the mode.  The
+    enable_smart_mode function will change the value of the smart_mode instance
+    to True and print the message "Device4 smart mode enabled.".  While the
+    disable_smart_mode function will change the value of the smart_mode instance
+    to False and print the message "Device4 smart mode disabled.".
+
+    Sample output: "Device4 smart mode enabled." or "Device4 smart mode disabled."
+    
+    Args:
+        name - for the device
+        brightness - level of brightness for the light
+        mode - whether the light is in smart mode or not
+    
+    Returns:
+        Prints out if the smart mode is enabled or disabled.
+    
+    Inheritance:
+        State - device state from the Device class
+    '''
+
     def __init__(self, name, brightness=50, smart_mode=False):
         super().__init__(name, brightness)
         self.smart_mode = smart_mode
@@ -159,8 +199,9 @@ class SmartBulb(Light):
         self.smart_mode = False
         print(f"{self.name} smart mode disabled.")
 
+    # Do not alter the code below; used for testing the program.
+
 if __name__ == "__main__":
     import doctest
 #    print(doctest.testfile('my_doctest.py'))
     print(doctest.testfile('doctest6.py'))
-
