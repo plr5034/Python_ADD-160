@@ -1,5 +1,5 @@
 '''
-Homework8
+Assignment: Gui From using Grid Geometry Manager
 Name: Paul Ring
 github link: https://github.com/plr5034/Python_ADD-160/blob/main/assignment_form_grid.py
 
