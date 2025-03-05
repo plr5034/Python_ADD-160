@@ -20,7 +20,7 @@ root.title("Sample...") # added to match example
 
 # Create label and entry widgets for 
 # Name, Email, and Password fields
-# Looks like exampel width may have been 15,
+# Looks like example width may have been 15,
 # but 20 is better for name, maybe even larger
 name_lable = tk.Label(root, text="Name:")
 name_entry = tk.Entry(root, width=20)
