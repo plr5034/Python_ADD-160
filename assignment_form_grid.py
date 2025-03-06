@@ -29,7 +29,7 @@ email_label = tk.Label(root, text="Email:")
 email_entry = tk.Entry(root, width=20)
 
 password_label = tk.Label(root, text="Password:")
-password_entry = tk.Entry(root, width=20)
+password_entry = tk.Entry(root, width=20, show="*") # types * for password
 
 # Place labels in the grid that is 3 rows, 2 columns
 # padx and pady are padding in the x and y directions to
