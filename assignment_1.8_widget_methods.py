@@ -129,7 +129,7 @@ time_increments = ["6",
                    "18",
                    "20"]
 
-selected_increment = tk.StringVar()
+selected_increment = tk.IntVar()
 selected_increment.set(time_increments[0])
 
 increment_dropdown = tk.OptionMenu(method_window,
