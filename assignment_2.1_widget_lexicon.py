@@ -1,7 +1,7 @@
 '''
 Assignment 2.1 A small lexicon of widgets - Part 1
 Author: Paul Ring
-github link: https://github.com/plr5034/Python_ADD-160/blob/main/assignment_widget_lexicon_p1.py
+github link: https://github.com/plr5034/Python_ADD-160/blob/main/assignment_2.1_widget_lexicon.py
 
 Modify a Tkinter application that currently:
 
