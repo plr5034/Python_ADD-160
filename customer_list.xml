@@ -1,0 +1,42 @@
+<customer_list>
+  <customer>
+     <id>12345</id>
+     <first>John</first>
+     <last>Doe</last>
+     <address>123 Elm Street</address>
+     <phone>915-555-1234</phone>
+     <email>john.doe@example.com</email>
+  </customer>
+  <customer>
+     <id>12346</id>
+     <first>Jane</first>
+     <last>Smith</last>
+     <address>456 Oak Avenue</address>
+     <phone>915-555-5678</phone>
+     <email>jane.smith@example.com</email>
+  </customer>
+  <customer>
+     <id>12347</id>
+     <first>Robert</first>
+     <last>Brown</last>
+     <address>789 Pine Road</address>
+     <phone>915-555-9012</phone>
+     <email>robert.brown@example.com</email>
+  </customer>
+  <customer>
+     <id>12348</id>
+     <first>Emily</first>
+     <last>Johnson</last>
+     <address>321 Maple Lane</address>
+     <phone>915-555-3456</phone>
+     <email>emily.johnson@example.com</email>
+  </customer>
+  <customer>
+     <id>12349</id>
+     <first>Michael</first>
+     <last>Williams</last>
+     <address>654 Cedar Boulevard</address>
+     <phone>915-555-7890</phone>
+     <email>michael.williams@example.com</email>
+  </customer>
+<customer><id>98765</id><first>Jim</first><last>Beam</last><address>4531 Main Drive</address><phone>888-123-4567</phone><email>jb@pm.me</email></customer></customer_list>

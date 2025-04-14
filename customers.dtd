@@ -1,0 +1,8 @@
+<!ELEMENT customer_list (customer+)>
+<!ELEMENT customer (id, first, last, address, phone, email)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT first (#PCDATA)>
+<!ELEMENT last (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
