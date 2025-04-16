@@ -1,0 +1,60 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "studentid": 10152,
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "phone": "123-456-7890",
+      "email": "alice.johnson@example.com"
+    },
+    {
+      "id": "2",
+      "studentid": 20152,
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "phone": "234-567-8901",
+      "email": "bob.smith@example.com"
+    },
+    {
+      "id": "3",
+      "studentid": 31015,
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "phone": "345-678-9012",
+      "email": "charlie.brown@example.com"
+    },
+    {
+      "id": "4",
+      "studentid": 41015,
+      "firstName": "Diana",
+      "lastName": "Ross",
+      "phone": "456-789-0123",
+      "email": "diana.ross@example.com"
+    },
+    {
+      "id": "5",
+      "studentid": 51015,
+      "firstName": "Ethan",
+      "lastName": "Hunt",
+      "phone": "567-890-1234",
+      "email": "ethan.hunt@example.com"
+    },
+    {
+      "id": "6",
+      "studentid": 61015,
+      "firstName": "Paul",
+      "lastName": "Lance",
+      "phone": "444-222-2333",
+      "email": "pl@example.com"
+    },
+    {
+      "id": "7",
+      "studentid": 71015,
+      "firstName": "Jim",
+      "lastName": "Jones",
+      "phone": "333-444-5555",
+      "email": "jj@gmail.com"
+    }
+  ]
+}
